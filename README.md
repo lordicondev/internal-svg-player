@@ -3,7 +3,7 @@
 Minimalistic internal animation player based on `lottie-web`, SVG-only.
 
 **This library is not intended for direct use by application developers.**  
-It is a stripped-down internal animation engine optimized for specific use cases.
+It is a stripped-down internal animation engine optimized for specific use cases, such as the [Lordicon](https://lordicon.com/) library.
 
 ---
 
