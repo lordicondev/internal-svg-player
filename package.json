@@ -1,0 +1,27 @@
+{
+  "name": "@lordicon/internal-svg-player",
+  "version": "0.1.0",
+  "description": "Minimalistic internal animation player.",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "author": "Marcin Baszczewski <marcin@baszczewski.pl> (https://www.baszczewski.pl/)",
+  "homepage": "https://lordicon.com/",
+  "repository": "https://github.com/lordicondev/internal-svg-player",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build --config vite-build.config.ts"
+  },
+  "keywords": [
+    "animation",
+    "svg",
+    "lottie",
+    "icons"
+  ],
+  "devDependencies": {
+    "@lordicon/helpers": "^1.11.0",
+    "vite": "^6.2.3",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "license": "MIT"
+}

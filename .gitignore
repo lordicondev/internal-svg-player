@@ -1,0 +1,5 @@
+dist/
+node_modules/
+/*.log
+lefthook.yml
+.DS_Store
