@@ -1,6 +1,6 @@
 {
   "name": "@lordicon/internal-svg-player",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Minimalistic internal animation player.",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
