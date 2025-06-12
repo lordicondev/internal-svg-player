@@ -10,8 +10,5 @@ export default defineConfig({
         host: '0.0.0.0',
         port: 8080,
     },
-    root: 'demo',
-    define: {
-        __SUPPORT_DARK__: true
-    },
+    root: 'demo'
 });
