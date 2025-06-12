@@ -18,9 +18,3 @@ It is a stripped-down internal animation engine optimized for specific use cases
 - 🧬 Designed for **internal integration** within higher-level UI frameworks
 
 This is **not** a drop-in replacement for `lottie-web`.
-
-## Installation
-
-```bash
-npm install internal-player
-```
