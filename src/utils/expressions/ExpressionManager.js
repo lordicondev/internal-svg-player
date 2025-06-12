@@ -391,12 +391,8 @@ const ExpressionManager = (function () {
     if (!elem.globalData.renderConfig.runExpressions) {
       return noOp;
     }
-    // return noOp;
 
     var val = data.x;
-
-    // console.log('---initiateExpression', val);
-
 
     var needsVelocity = /velocity(?![\w\d])/.test(val);
 
@@ -440,16 +436,11 @@ const ExpressionManager = (function () {
     var valueAtTime;
     var velocityAtTime;
 
-    // var scoped_bm_rt;
-    // val = val.replace(/(\\?"|')((http)(s)?(:\/))?\/.*?(\\?"|')/g, "\"\""); // deter potential network calls
-
     var expression_function = prepareExpression(val);
     if (!expression_function) {
       return noOp;
     }
 
-    // var expression_function = eval('[function _expression_function(){' + val + ';scoped_bm_rt=$bm_rt}]')[0]; // eslint-disable-line no-eval
-    // eslint-disable-line no-eval
     var numKeys = property.kf ? data.k.length : 0;
 
     var active = !this.data || this.data.hd !== true;
@@ -517,9 +508,6 @@ const ExpressionManager = (function () {
     }
 
     var comp = elem.comp.globalData.projectInterface.bind(elem.comp.globalData.projectInterface);
-
-    // const xxx = comp('wired-gradient-3094-marketing-letter').layer('control').effect('secondary')('Color');
-    // console.log('---xxx', xxx);
 
     function lookAt(elem1, elem2) {
       var fVec = [elem2[0] - elem1[0], elem2[1] - elem1[1], elem2[2] - elem1[2]];
@@ -689,9 +677,6 @@ const ExpressionManager = (function () {
     var globalData = elem.globalData;
 
     function executeExpression(_value) {
-      // return value;
-      // console.log('---executeExpression', _value);
-      // globalData.pushExpression();
       value = _value;
       if (this.frameExpressionId === elem.globalData.frameId && this.propType !== 'textSelector') {
         return value;
@@ -762,15 +747,15 @@ const ExpressionManager = (function () {
           createPath,
           comp,
           value,
+          thisComp,
         });
 
         return result?.propType === propTypes.SHAPE
           ? result.v
           : result;
       } catch (e) {
-        console.log('---error in expression', e);
+        console.error(e);
       }
-
 
       // TODO: Check if it's possible to return on ShapeInterface the .v value
       // Changed this to a ternary operation because Rollup failed compiling it correctly

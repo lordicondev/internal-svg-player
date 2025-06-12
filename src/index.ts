@@ -54,6 +54,23 @@ export interface AnimationEvents {
     segmentStart: SegmentStartEvent;
 }
 
+export type AnimationConfig = {
+    container: HTMLElement,
+    loop?: boolean,
+    autoplay?: boolean,
+    rendererSettings?: any;
+    initialSegment?: AnimationSegment;
+    name?: string;
+}
+
+export type AnimationConfigWithData = AnimationConfig & {
+    animationData: any;
+}
+
+export type AnimationConfigWithPath = AnimationConfig & {
+    path: string;
+}
+
 export type AnimationItem = {
     name: string;
     isLoaded: boolean;
@@ -100,15 +117,7 @@ export type AnimationItem = {
     removeEventListener<T extends AnimationEventName>(name: T, callback?: AnimationEventCallback<AnimationEvents[T]>): void;
 }
 
-function loadAnimation(params: {
-    container: HTMLElement,
-    loop: boolean,
-    autoplay: boolean,
-    animationData: any,
-    rendererSettings?: any;
-    initialSegment?: AnimationSegment;
-    name?: string;
-}): AnimationItem {
+function loadAnimation(params: AnimationConfigWithData | AnimationConfigWithPath): AnimationItem {
     return svg.loadAnimation({
         renderer: 'svg',
         ...params,
