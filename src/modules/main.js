@@ -1,11 +1,11 @@
 import animationManager from '../animation/AnimationManager';
 import {
-  setDefaultCurveSegments,
-  getDefaultCurveSegments,
-  roundValues,
-  setIdPrefix,
-  setSubframeEnabled,
-  setExpressionsPlugin,
+    setDefaultCurveSegments,
+    getDefaultCurveSegments,
+    roundValues,
+    setIdPrefix,
+    setSubframeEnabled,
+    setExpressionsPlugin,
 } from '../utils/common';
 import PropertyFactory from '../utils/PropertyFactory';
 import ShapePropertyFactory from '../utils/shapes/ShapeProperty';
@@ -19,77 +19,77 @@ var renderer = '';
 
 
 function setLocation(href) {
-  setLocationHref(href);
+    setLocationHref(href);
 }
 
 function searchAnimations() {
-  if (standalone === true) {
-    animationManager.searchAnimations(animationData, standalone, renderer);
-  } else {
-    animationManager.searchAnimations();
-  }
+    if (standalone === true) {
+        animationManager.searchAnimations(animationData, standalone, renderer);
+    } else {
+        animationManager.searchAnimations();
+    }
 }
 
 function setSubframeRendering(flag) {
-  setSubframeEnabled(flag);
+    setSubframeEnabled(flag);
 }
 
 function setPrefix(prefix) {
-  setIdPrefix(prefix);
+    setIdPrefix(prefix);
 }
 
 function loadAnimation(params) {
-  if (standalone === true) {
-    params.animationData = JSON.parse(animationData);
-  }
-  return animationManager.loadAnimation(params);
+    if (standalone === true) {
+        params.animationData = JSON.parse(animationData);
+    }
+    return animationManager.loadAnimation(params);
 }
 
 function setQuality(value) {
-  if (typeof value === 'string') {
-    switch (value) {
-      case 'high':
-        setDefaultCurveSegments(200);
-        break;
-      default:
-      case 'medium':
-        setDefaultCurveSegments(50);
-        break;
-      case 'low':
-        setDefaultCurveSegments(10);
-        break;
+    if (typeof value === 'string') {
+        switch (value) {
+            case 'high':
+                setDefaultCurveSegments(200);
+                break;
+            default:
+            case 'medium':
+                setDefaultCurveSegments(50);
+                break;
+            case 'low':
+                setDefaultCurveSegments(10);
+                break;
+        }
+    } else if (!isNaN(value) && value > 1) {
+        setDefaultCurveSegments(value);
     }
-  } else if (!isNaN(value) && value > 1) {
-    setDefaultCurveSegments(value);
-  }
-  if (getDefaultCurveSegments() >= 50) {
-    roundValues(false);
-  } else {
-    roundValues(true);
-  }
+    if (getDefaultCurveSegments() >= 50) {
+        roundValues(false);
+    } else {
+        roundValues(true);
+    }
 }
 
 function inBrowser() {
-  return typeof navigator !== 'undefined';
+    return typeof navigator !== 'undefined';
 }
 
 function installPlugin(type, plugin) {
-  if (type === 'expressions') {
-    setExpressionsPlugin(plugin);
-  }
+    if (type === 'expressions') {
+        setExpressionsPlugin(plugin);
+    }
 }
 
 function getFactory(name) {
-  switch (name) {
-    case 'propertyFactory':
-      return PropertyFactory;
-    case 'shapePropertyFactory':
-      return ShapePropertyFactory;
-    case 'matrix':
-      return Matrix;
-    default:
-      return null;
-  }
+    switch (name) {
+        case 'propertyFactory':
+            return PropertyFactory;
+        case 'shapePropertyFactory':
+            return ShapePropertyFactory;
+        case 'matrix':
+            return Matrix;
+        default:
+            return null;
+    }
 }
 
 lottie.play = animationManager.play;

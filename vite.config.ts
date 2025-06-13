@@ -1,14 +1,22 @@
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
     build: {
-        rollupOptions: {
-            input: 'demo/index.html',
+        lib: {
+            entry: 'src/index.ts',
+            name: 'lottie',
+            fileName: 'index',
+            formats: ['es'],
         },
+        rollupOptions: {
+            output: {
+                exports: 'named',
+            },
+        },
+        minify: true,
+        sourcemap: true,
+        emptyOutDir: true,
     },
-    server: {
-        host: '0.0.0.0',
-        port: 8080,
-    },
-    root: 'demo'
-});
+    plugins: [dts()],
+})

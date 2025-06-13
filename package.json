@@ -1,31 +1,34 @@
 {
-  "name": "@lordicon/player-web-internal",
-  "version": "0.1.0",
-  "description": "Minimalistic internal animation player.",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
-  "author": "Marcin Baszczewski <marcin@baszczewski.pl> (https://www.baszczewski.pl/)",
-  "homepage": "https://lordicon.com/",
-  "repository": "https://github.com/lordicondev/player-web-internal",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build --config vite-build.config.ts",
-    "prepack": "npm run build"
-  },
-  "keywords": [
-    "animation",
-    "svg",
-    "lottie",
-    "icons"
-  ],
-  "devDependencies": {
-    "@lordicon/helpers": "^1.11.0",
-    "vite": "^6.2.3",
-    "vite-plugin-dts": "^4.5.4"
-  },
-  "license": "MIT"
+    "name": "@lordicon/internal",
+    "version": "0.2.0",
+    "description": "Minimalistic internal animation player.",
+    "main": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "sideEffects": false,
+    "author": "Marcin Baszczewski <marcin@baszczewski.pl> (https://www.baszczewski.pl/)",
+    "homepage": "https://lordicon.com/",
+    "repository": "https://github.com/lordicondev/player-internal",
+    "scripts": {
+        "start": "vite --config vite-examples.config.ts",
+        "build": "vite build",
+        "prepack": "npm run build"
+    },
+    "keywords": [
+        "lordicon",
+        "animation",
+        "svg",
+        "lottie",
+        "icons"
+    ],
+    "devDependencies": {
+        "vite": "^6.2.3",
+        "vite-plugin-dts": "^4.5.4",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint": "^8.54.0",
+        "prettier": "^3.2.5"
+    },
+    "license": "MIT"
 }

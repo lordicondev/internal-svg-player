@@ -18,7 +18,7 @@ export function prepareExpression(
     expr: string,
 ): any {
 
-    // Handle color expressions
+    // Handle color expressions.
     const matchColor = expr.match(REGEX_COLOR);
     if (matchColor) {
         const args = matchColor.slice(1);
@@ -28,7 +28,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle stroke expressions
+    // Handle stroke expressions.
     const matchStroke = expr.match(REGEX_STROKE);
     if (matchStroke) {
         const args = matchStroke.slice(1);
@@ -41,7 +41,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle if expressions
+    // Handle if expressions.
     const matchIf = expr.match(REGEX_IF);
     if (matchIf) {
         const args = matchIf.slice(1);
@@ -55,7 +55,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle legacy layer expressions
+    // Handle legacy layer expressions.
     const matchLegacyLayer = expr.match(REGEX_LEGACY_LAYER);
     if (matchLegacyLayer) {
         const args = matchLegacyLayer.slice(1);
@@ -68,7 +68,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle legacy scale expressions
+    // Handle legacy scale expressions.
     const matchLegacyScale = expr.match(REGEX_LEGACY_SCALE);
     if (matchLegacyScale) {
         const args = matchLegacyScale.slice(1);
@@ -79,7 +79,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle legacy axis expressions
+    // Handle legacy axis expressions.
     const matchLegacyAxis = expr.match(REGEX_LEGACY_AXIS);
     if (matchLegacyAxis) {
         const args = matchLegacyAxis.slice(1);
@@ -89,7 +89,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle legacy color expressions
+    // Handle legacy color expressions.
     const matchLegacyColor = expr.match(REGEX_LEGACY_COLOR);
     if (matchLegacyColor) {
         const args = matchLegacyColor.slice(1);
@@ -99,7 +99,7 @@ export function prepareExpression(
         };
     }
 
-    // Handle legacy watermark expressions
+    // Handle legacy watermark expressions.
     const matchLegacyWatermark = expr.match(REGEX_LEGACY_WATERMARK);
     if (matchLegacyWatermark) {
         return (ctx?: any) => {

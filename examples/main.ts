@@ -1,5 +1,5 @@
 import lottie from '../src';
-import { readProperties, updateProperties, hexToLottieColor } from '@lordicon/helpers';
+import { extractLottieProperties, hexToTupleColor, updateLottieProperties } from './utils';
 
 async function loadIcon(name) {
     return await fetch(`icons/${name}.json`)
@@ -12,8 +12,7 @@ async function loadIcon(name) {
 
 async function insertRawIcon(id, animationData) {
     return lottie.loadAnimation({
-        container: document.getElementById(id),
-        renderer: 'svg',
+        container: document.getElementById(id)!,
         loop: true,
         autoplay: true,
         animationData,
@@ -21,9 +20,9 @@ async function insertRawIcon(id, animationData) {
 }
 
 function setStroke(instance, icon, weight) {
-    const properties = readProperties(icon, { lottieInstance: instance });
+    const properties = extractLottieProperties(icon, { lottieInstance: instance });
 
-    updateProperties(
+    updateLottieProperties(
         instance,
         properties.filter(c => c.name === 'stroke'),
         weight,
@@ -31,12 +30,12 @@ function setStroke(instance, icon, weight) {
 }
 
 function setColor(instance, icon, colorName, colorValue) {
-    const properties = readProperties(icon, { lottieInstance: instance });
+    const properties = extractLottieProperties(icon, { lottieInstance: instance });
 
-    updateProperties(
+    updateLottieProperties(
         instance,
         properties.filter(c => c.name === colorName),
-        hexToLottieColor(colorValue),
+        hexToTupleColor(colorValue),
     );
 }
 

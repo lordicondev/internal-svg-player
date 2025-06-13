@@ -1,5 +1,7 @@
-dist/
+# Node
+*.log
+*.log.*
+
+.vscode/
 node_modules/
-/*.log
-lefthook.yml
-.DS_Store
+dist/

@@ -1,7 +1,7 @@
 import lottie from './svg_light';
 import {
-  setExpressionsPlugin,
-  setExpressionInterfaces,
+    setExpressionsPlugin,
+    setExpressionInterfaces,
 } from '../utils/common';
 import Expressions from '../utils/expressions/Expressions';
 import interfacesProvider from '../utils/expressions/InterfacesProvider';

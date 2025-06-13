@@ -12,10 +12,10 @@ const setLocationHref = (value) => { locationHref = value; };
 const getLocationHref = () => locationHref;
 
 export {
-  svgNS,
-  initialDefaultFrame,
-  setWebWorker,
-  getWebWorker,
-  setLocationHref,
-  getLocationHref,
+    svgNS,
+    initialDefaultFrame,
+    setWebWorker,
+    getWebWorker,
+    setLocationHref,
+    getLocationHref,
 };

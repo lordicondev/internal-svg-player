@@ -8,7 +8,7 @@ import ZigZagModifier from '../utils/shapes/ZigZagModifier';
 import OffsetPathModifier from '../utils/shapes/OffsetPathModifier';
 import SVGRenderer from '../renderers/SVGRenderer';
 import {
-  registerRenderer,
+    registerRenderer,
 } from '../renderers/renderersManager';
 
 // Registering renderers

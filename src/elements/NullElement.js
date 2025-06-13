@@ -1,5 +1,5 @@
 import {
-  extendPrototype,
+    extendPrototype,
 } from '../utils/functionExtensions';
 import BaseElement from './BaseElement';
 import TransformElement from './helpers/TransformElement';
@@ -7,22 +7,22 @@ import HierarchyElement from './helpers/HierarchyElement';
 import FrameElement from './helpers/FrameElement';
 
 function NullElement(data, globalData, comp) {
-  this.initFrame();
-  this.initBaseData(data, globalData, comp);
-  this.initFrame();
-  this.initTransform(data, globalData, comp);
-  this.initHierarchy();
+    this.initFrame();
+    this.initBaseData(data, globalData, comp);
+    this.initFrame();
+    this.initTransform(data, globalData, comp);
+    this.initHierarchy();
 }
 
 NullElement.prototype.prepareFrame = function (num) {
-  this.prepareProperties(num, true);
+    this.prepareProperties(num, true);
 };
 
 NullElement.prototype.renderFrame = function () {
 };
 
 NullElement.prototype.getBaseElement = function () {
-  return null;
+    return null;
 };
 
 NullElement.prototype.destroy = function () {

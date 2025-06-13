@@ -1,3 +1,3 @@
 export default {
-  TRANSFORM_EFFECT: 'transformEFfect',
+    TRANSFORM_EFFECT: 'transformEFfect',
 };

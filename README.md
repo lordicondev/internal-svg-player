@@ -1,4 +1,4 @@
-# player-web-internal
+# Lordicon Internal Player
 
 Minimalistic internal animation player based on `lottie-web`, SVG-only.
 
@@ -9,7 +9,7 @@ It is a stripped-down internal animation engine optimized for specific use cases
 
 ## What is this?
 
-`player-web-internal` is a **specialized fork** of [Airbnb's lottie-web](https://github.com/airbnb/lottie-web), built with a narrow purpose:
+`@lordicon/internal` is a **specialized fork** of [Airbnb's lottie-web](https://github.com/airbnb/lottie-web), built with a narrow purpose:
 
 - ✅ SVG renderer only (no canvas)
 - 🗑️ Removed all text and font rendering logic
